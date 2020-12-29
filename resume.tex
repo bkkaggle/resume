@@ -1,99 +1,153 @@
-\documentclass{article}
-\usepackage{scimisc-cv}
+% copied from https://github.com/wlawt/resume/blob/master/wlawt.tex
+% thanks Will :)
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{amsmath}
 
-\title{Resume}
-\author{Bilal Khan}
-\date{Dec 2020}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-\cvname{Bilal Khan}
-\cvpersonalinfo{
-    bilal.khan1@uwaterloo.ca \cvinfosep
-    \url{https://bkkaggle.github.io} \cvinfosep
-    \url{https://www.linkedin.com/in/bilal-khan-9294451ab}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small\text
+    #1
 }
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large #1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[1]{
+    \resumeItem{#1} 
+    \vspace{-4pt}
+}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}\itemsep0em}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 \begin{document}
 
-\makecvtitle
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://bkkaggle.github.io}{\Huge Bilal Khan}} & \href{mailto:bilal.khan1@uwaterloo.ca}{bilal.khan1@uwaterloo.ca}\\
+  \href{https://bkkaggle.github.io}{https://bkkaggle.github.io} & 
+  \href{https://github.com/bkkaggle}{https://github.com/bkkaggle}\\
+\end{tabular*}
 
 \section{About}
-\begin{itemize}
-\item \textbf{Interests:} Generative modeling, NLP, Systems programming, Full-stack and mobile development
-\item \textbf{Languages:} Python, Rust, C/C++, Javascript, SQL, Swift
-\item \textbf{Libraries and Frameworks:} JAX, Pytorch, Tensorflow, ReactJS, React Native, NodeJS, GCP
-\end{itemize}
- 
-\section{Projects}
-
-\cvsubsection{L2}[May to June 2020]
-[Fast, BLAS-accelerated machine learning library][\url{https://github.com/bkkaggle/L2}]
-
-\begin{itemize}
-    \item Wrote a fast and efficient machine learning library in the Rust programming language.
-    \item Supports numpy-style multidimensional arrays and array operations, BLAS-accelerated matrix multiplication, and a graph-based automatic differentiation engine.
+\begin{itemize}[topsep=0pt]\itemsep0em
+    \item \textbf{Interests:} Generative modeling, NLP, Systems programming, Full-stack and mobile development
+    \item \textbf{Languages:} Python, Rust, C/C++, Javascript, SQL, Swift
+    \item \textbf{Libraries and Frameworks:} JAX, Pytorch, Tensorflow, ReactJS, React Native, NodeJS, GCP
 \end{itemize}
 
-\cvsubsection{NLP Research Project}[March to May 2020]
-[Replicated GPT-2][\url{https://github.com/bkkaggle/lm-training-research-project}]
+\section{Experience}
+    \resumeSubHeadingListStart
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+            \large\textbf{L2} & \text{May—June 2020}\\
+            \text{Fast, BLAS-accelerated machine learning library} & \href{https://github.com/bkkaggle/L2}{https://github.com/bkkaggle/L2}
+        \vspace{3pt}
+        \end{tabular*}
+        \begin{itemize}[topsep=0pt]\itemsep0em
+            \item Wrote a fast and efficient machine learning library in the Rust programming language.
+            \item Supports numpy-style multidimensional arrays and array operations, BLAS-accelerated matrix multiplication, and a graph-based automatic differentiation engine.
+        \end{itemize}
+        \vspace{7pt}
 
-\begin{itemize}
-    \item Pretrained OpenAI's 124M parameter GPT-2 language model to generate convincing human-like text.
-    \item Used the Google Cloud Platform with PyTorch and Tensorflow to scale the model to a 128-core TPUv3 Pod. 
-    \item Worked on developing and pretraining a new, more efficient ALBERT-style language model.
-\end{itemize}
+    \resumeSubHeadingListStart
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+            \large\textbf{NLP Research Project} & \text{March—May 2020}\\
+            \text{Replicated GPT-2} & \href{https://github.com/bkkaggle/lm-training-research-project}{https://github.com/bkkaggle/lm-training-research-project}
+            \vspace{3pt}
+        \end{tabular*}
+        \begin{itemize}[topsep=0pt]\itemsep0em
+            \item Pretrained OpenAI's 124M parameter GPT-2 language model to generate convincing human-like text.
+            \item Used the Google Cloud Platform with PyTorch and Tensorflow to scale the model to a 128-core TPU Pod. 
+            \item Developed and pretrained a new, more efficient ALBERT-style language model.
+        \end{itemize}
+        \vspace{7pt}
 
-\cvsubsection{Machine learning competitions}[Jan 2018 to July 2019]
-[Kaggle Expert][Highest competition rank: 798/140,000+]
+    \resumeSubHeadingListStart
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+            \large\textbf{Blog} & \text{2020—Present}\\
+            \text{Topics in machine learning, Rust, and computer science} & \href{https://bkkaggle.github.io/blog}{https://bkkaggle.github.io/blog}
+            \vspace{3pt}
+        \end{tabular*}
+        \begin{itemize}[topsep=0pt]\itemsep0em
+            \item Wrote series of long and short form blog posts on several topics in machine learning and computer science.
+            \item Published blog posts on the official PyTorch and Weights\&Biases blogs (\url{https://bit.ly/2FFCzL9}, \url{https://bit.ly/31Q06AS})        
+        \end{itemize}
+        \vspace{7pt}
 
-\begin{itemize}
-    \item \textbf{Silver Medal:} (41/3611) Google Analytics Customer Revenue Prediction Competition.
-    \item \textbf{Bronze Medal:} (54/648) CERN TrackML Particle Tracking Challenge
-    \item \textbf{Bronze Medal:} (173/3229) TGS Salt Identification Challenge
-    \item \textbf{Bronze Medal:} (287/3634) 2018 Data Science Bowl
-    \item \textbf{Bronze Medal:} (314/3165) Jigsaw Unintended Bias in Toxicity Classification 
-\end{itemize}
+    \resumeSubHeadingListStart
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+            \large\textbf{SATisfied} & \text{Sep 2019—May 2020}\\
+            \text{Education App}
+            \vspace{3pt}
+        \end{tabular*}
+        \begin{itemize}[topsep=0pt]\itemsep0em
+            \item Worked on developing an app to help students preparing for the SAT by creating personalized plans based on student responses to diagnostic tests.
+            \item Built with React Native, ExpressJs, MySQL, and the Google Cloud Platform.
+        \end{itemize}
+        \vspace{7pt}
 
-\cvsubsection{Blog}[2020 to Present]
-[Topics in machine learning, Rust, and computer science][\url{https://bkkaggle.github.io/blog}]
-
-\begin{itemize}
-    \item Wrote series of long and short form blog posts on several topics in machine learning and computer science.
-    \item Published blog posts on the official PyTorch and Weights\&Biases blogs (\url{https://bit.ly/2FFCzL9}, \url{https://bit.ly/31Q06AS})
-\end{itemize}
-
-\cvsubsection{SATisfied}[Sep 2019 to May 2020]
-[Education App][ ]
-\begin{itemize}
-    \item Worked on developing an app to help students preparing for the SAT by creating personalized plans based on student responses to diagnostic tests.
-    \item Built with React Native, ExpressJs, MySQL, and the Google Cloud Platform.
-\end{itemize}
-
-\cvsubsection{PyTorch Zoo}[June 2019]
-[PyTorch Utility Library][\url{https://github.com/bkkaggle/pytorch\_zoo}]
-
-\begin{itemize}
-    \item Created a Python-based library with a collection of useful modules and utilities for working with PyTorch with more than 80 stars on GitHub.
-\end{itemize}
-
-\cvsubsection{Handwritten mathematical expression recognition}[Feb 2019 to May 2019]
-[Computer vision research project][\url{https://github.com/bkkaggle/math-recognition}]
-
-\begin{itemize}
-\item Worked on using neural networks to transcribe handwritten math equations into LaTeX by implementing several machine learning papers in the field (WAP, Im2Latex, etc).
-\end{itemize}
+    \resumeSubHeadingListStart
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+            \large\textbf{Machine learning competitions} & \text{Jan 2018—July 2019}\\
+            \text{Kaggle Expert} & \text{Highest competition rank: 798/140,000+}
+            \vspace{3pt}
+        \end{tabular*}
+        \begin{itemize}[topsep=0pt]\itemsep0em
+            \item \textbf{Silver Medal:} (41/3611) Google Analytics Customer Revenue Prediction Competition.
+            \item \textbf{Bronze Medal:} (54/648) CERN TrackML Particle Tracking Challenge
+            \item \textbf{Bronze Medal:} (173/3229) TGS Salt Identification Challenge
+            \item \textbf{Bronze Medal:} (287/3634) 2018 Data Science Bowl
+            \item \textbf{Bronze Medal:} (314/3165) Jigsaw Unintended Bias in Toxicity Classification         
+        \end{itemize}
+        \vspace{7pt}
 
 \section{Education}
-
-\cvsubsection{University of Waterloo}[Bachelor of Software Engineering (BSE) Candidate]
-[1A student][Sept 2020 to 2025]
- 
-\cvsubsection{Coursera}[Deep Learning Specialization]
-[\url{https://coursera.org/verify/specialization/8YRK7HDMW5XZ}][Nov 2017 - Feb 2018]
-
-\begin{itemize}
-\item Completed all 5 courses in the specialization with an 89.8\% average
-\end{itemize}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \large\textbf{University of Waterloo} & \text{Bachelor of Software Engineering (BSE) Candidate}\\
+        \text{1A student} & \text{2020—2025}\\
+        \large\textbf{Coursera} & \text{Deep Learning Specialization}\\
+        \href{https://coursera.org/verify/specialization/8YRK7HDMW5XZ}{https://coursera.org/verify/specialization/8YRK7HDMW5XZ} & \text{Nov 2017—Feb 2018}\\
+    \end{tabular*}
 
 \end{document}
-
