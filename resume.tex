@@ -27,90 +27,78 @@
 \setlength{\tabcolsep}{0in}
 
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-15pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\items}[1]{
+    \begin{itemize}[topsep=0pt]\itemsep0em
+        #1
+    \end{itemize}    
+}
+
+\newcommand{\heading}[4]{
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \large\textbf{#1} & #2\\
+        #3 & #4
+    \end{tabular*}
+}
 
 \begin{document}
 
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{https://bkkaggle.github.io}{\Huge Bilal Khan}} & \href{mailto:bilal.khan1@uwaterloo.ca}{bilal.khan1@uwaterloo.ca}\\
-  \href{https://bkkaggle.github.io}{https://bkkaggle.github.io} & 
-  \href{https://github.com/bkkaggle}{https://github.com/bkkaggle}\\
+    \textbf{\href{https://bkkaggle.github.io}{\LARGE Bilal Khan}} & \href{mailto:bilal.khan1@uwaterloo.ca}{bilal.khan1@uwaterloo.ca}\\
+    \href{https://bkkaggle.github.io}{bkkaggle.github.io} & \href{https://github.com/bkkaggle}{github.com/bkkaggle}\\
+    \href{https://bkkaggle.github.io/blog}{bkkaggle.github.io/blog}
 \end{tabular*}
 
 \section{About}
-\begin{itemize}[topsep=0pt]\itemsep0em
-    \item \textbf{Interests:} Generative modeling, NLP, Systems programming, Full-stack and mobile development
-    \item \textbf{Languages:} Python, Rust, C/C++, Javascript, SQL, Swift
-    \item \textbf{Libraries and Frameworks:} JAX, Pytorch, Tensorflow, ReactJS, React Native, NodeJS, GCP
-\end{itemize}
+\items{
+    \item \textbf{Interests:} Full-stack and mobile development, NLP, Generative modeling, Systems programming
+    \item \textbf{Languages:} Python, Javascript, Rust, C/C++, SQL, Swift
+    \item \textbf{Libraries and Frameworks:} ReactJS/React Native, ExpressJS, Pytorch, Tensorflow, JAX, GCP
+}
 
 \section{Experience}
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-        \large\textbf{Manageering Inc} & \text{Sep 2019—May 2020}\\
-        \text{Full-stack developer} & \text{}
-        \vspace{3pt}
-    \end{tabular*}
-
-    \begin{itemize}[topsep=0pt]\itemsep0em
-        \item Worked on developing a prototype app to help students preparing for the SAT by creating personalized plans based on student responses to diagnostic tests.
+    \heading{Manageering Inc}{Sep 2019—May 2020}{Full-stack and mobile developer}{}
+    \items{
+        \item Worked on developing an app to help students preparing for the SAT by creating personalized plans based on student results on diagnostic tests.
         \item Built with React Native, ExpressJs, MySQL, and the Google Cloud Platform.
-    \end{itemize}
+    }
 
 \section{Projects}
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-        \large\textbf{L2} & \text{May—June 2020}\\
-        \text{Fast, BLAS-accelerated machine learning library} & \href{https://github.com/bkkaggle/L2}{https://github.com/bkkaggle/L2}
-        \vspace{3pt}
-    \end{tabular*}
-    \begin{itemize}[topsep=0pt]\itemsep0em
-        \item Wrote a fast and efficient machine learning library in the Rust programming language.            \item Supports numpy-style multidimensional arrays and array operations, BLAS-accelerated matrix multiplication, and a graph-based automatic differentiation engine.
-    \end{itemize}
-    \vspace{7pt}
 
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-        \large\textbf{NLP Research Project} & \text{March—May 2020}\\
-        \text{Replicated GPT-2} & \href{https://github.com/bkkaggle/lm-training-research-project}{https://github.com/bkkaggle/lm-training-research-project}
-        \vspace{3pt}
-    \end{tabular*}
-    \begin{itemize}[topsep=0pt]\itemsep0em
+    \heading{Replicating machine learning papers}{July—Dec 2020}{Image-to-image translation GANs}{\href{https://github.com/bkkaggle/jax-gans}{github.com/bkkaggle/jax-gans}}
+    \items{
+        \item Replicating the \href{https://arxiv.org/abs/2003.04858}{ACL-GAN} paper in JAX and the \href{https://arxiv.org/abs/1611.07004}{Pix2Pix} and \href{https://arxiv.org/abs/1711.11585}{Pix2PixHD} papers in Pytorch and Tensorflow.
+    }
+    \vspace{5pt}
+
+    \heading{L2}{May—June 2020}{Fast, BLAS-accelerated machine learning library}{\href{https://github.com/bkkaggle/L2}{github.com/bkkaggle/L2}}
+    \items{
+        \item Wrote a fast and efficient machine learning library in the Rust programming language.
+        \item Supports numpy-style multidimensional arrays and array operations, BLAS-accelerated matrix multiplication, and a graph-based automatic differentiation engine.
+    }
+    \vspace{5pt}
+
+    \heading{NLP Research Project}{March—May 2020}{Replicating GPT-2}{\href{https://github.com/bkkaggle/lm-training-research-project}{github.com/bkkaggle/lm-training-research-project}}
+    \items{
         \item Pretrained OpenAI's 124M parameter GPT-2 language model to generate convincing human-like text.
         \item Used the Google Cloud Platform with PyTorch and Tensorflow to scale the model to a 128-core TPU Pod. 
         \item Developed and pretrained a new, more efficient ALBERT-style language model.
-    \end{itemize}
-    \vspace{7pt}
-
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-        \large\textbf{Blog} & \text{2020—Present}\\
-        \text{Topics in machine learning, Rust, and computer science} & \href{https://bkkaggle.github.io/blog}{https://bkkaggle.github.io/blog}
-        \vspace{3pt}
-    \end{tabular*}
-    \begin{itemize}[topsep=0pt]\itemsep0em
-        \item Wrote series of long and short form blog posts on several topics in machine learning and computer science.
-        \item Published blog posts on the official PyTorch and Weights\&Biases blogs (\url{https://bit.ly/2FFCzL9}, \url{https://bit.ly/31Q06AS})        
-    \end{itemize}
-    \vspace{7pt}
+    }
+    \vspace{5pt}
     
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-        \large\textbf{Machine learning competitions} & \text{Jan 2018—July 2019}\\
-        \text{Kaggle Expert} & \text{Highest competition rank: 798/140,000+}
-        \vspace{3pt}
-    \end{tabular*}
-    \begin{itemize}[topsep=0pt]\itemsep0em
-        \item \textbf{Silver Medal:} (41/3611) Google Analytics Customer Revenue Prediction Competition.
+    \heading{Machine learning competitions}{Jan 2018—July 2019}{Kaggle Expert}{Highest competition rank: 798/140,000+}
+    \items{
+        \item \textbf{Silver Medal:} (41/3611) Google Analytics Customer Revenue Prediction Competition
         \item \textbf{Bronze Medal:} (54/648) CERN TrackML Particle Tracking Challenge
         \item \textbf{Bronze Medal:} (173/3229) TGS Salt Identification Challenge
         \item \textbf{Bronze Medal:} (287/3634) 2018 Data Science Bowl
-        \item \textbf{Bronze Medal:} (314/3165) Jigsaw Unintended Bias in Toxicity Classification         
-    \end{itemize}
-    \vspace{7pt}
+        \item \textbf{Bronze Medal:} (314/3165) Jigsaw Unintended Bias in Toxicity Classification
+    }
 
 \section{Education}
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-        \large\textbf{University of Waterloo} & \text{2020-2025 (Expected)}\\
-        \text{Bachelor of Software Engineering (BSE) Candidate} & \text{}\\
-        \large\textbf{Coursera} & \text{Nov 2017—Feb 2018}\\
-        \text{Deep Learning Specialization} & \href{https://coursera.org/verify/specialization/8YRK7HDMW5XZ}{coursera.org/verify/specialization/8YRK7HDMW5XZ}\\
-    \end{tabular*}
+    \heading{University of Waterloo}{2020-2025 (Expected)}{Bachelor of Software Engineering (BSE) Candidate}{}
+    \heading{Coursera}{Nov 2017—Feb 2018}{Deep Learning Specialization}{\href{https://coursera.org/verify/specialization/8YRK7HDMW5XZ}{coursera.org/verify/specialization/8YRK7HDMW5XZ}}
 
 \end{document}

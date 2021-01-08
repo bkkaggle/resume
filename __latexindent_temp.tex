@@ -1,0 +1,121 @@
+% copied from https://github.com/wlawt/resume/blob/master/wlawt.tex
+% thanks Will :)
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{amsmath}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\items}[1]{
+    \begin{itemize}[topsep=0pt]\itemsep0em
+        #1
+    \end{itemize}    
+}
+
+\begin{document}
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{\href{https://bkkaggle.github.io}{\Huge Bilal Khan}} & \href{mailto:bilal.khan1@uwaterloo.ca}{bilal.khan1@uwaterloo.ca}\\
+    \href{https://bkkaggle.github.io}{https://bkkaggle.github.io} & \href{https://github.com/bkkaggle}{https://github.com/bkkaggle}\\
+\end{tabular*}
+
+\section{About}
+\items{
+    \item \textbf{Interests:} Full-stack and mobile development, NLP, Generative modeling, Systems programming
+    \item \textbf{Languages:} Python, Javascript, Rust, C/C++, SQL, Swift
+    \item \textbf{Libraries and Frameworks:} ReactJS/React Native, ExpressJS, Pytorch, Tensorflow, JAX, GCP
+}
+
+\section{Experience}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \large\textbf{Manageering Inc} & \text{Sep 2019—May 2020}\\
+        \text{Full-stack developer} & \text{}
+        \vspace{3pt}
+    \end{tabular*}
+
+    \begin{itemize}[topsep=0pt]\itemsep0em
+        \item Worked on developing an app to help students preparing for the SAT by creating personalized plans based on student results on diagnostic tests.
+        \item Built with React Native, ExpressJs, MySQL, and the Google Cloud Platform.
+    \end{itemize}
+
+\section{Projects}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \large\textbf{L2} & \text{May—June 2020}\\
+        \text{Fast, BLAS-accelerated machine learning library} & \href{https://github.com/bkkaggle/L2}{https://github.com/bkkaggle/L2}
+        \vspace{3pt}
+    \end{tabular*}
+    \begin{itemize}[topsep=0pt]\itemsep0em
+        \item Wrote a fast and efficient machine learning library in the Rust programming language.            \item Supports numpy-style multidimensional arrays and array operations, BLAS-accelerated matrix multiplication, and a graph-based automatic differentiation engine.
+    \end{itemize}
+    \vspace{7pt}
+
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \large\textbf{NLP Research Project} & \text{March—May 2020}\\
+        \text{Replicated GPT-2} & \href{https://github.com/bkkaggle/lm-training-research-project}{https://github.com/bkkaggle/lm-training-research-project}
+        \vspace{3pt}
+    \end{tabular*}
+    \begin{itemize}[topsep=0pt]\itemsep0em
+        \item Pretrained OpenAI's 124M parameter GPT-2 language model to generate convincing human-like text.
+        \item Used the Google Cloud Platform with PyTorch and Tensorflow to scale the model to a 128-core TPU Pod. 
+        \item Developed and pretrained a new, more efficient ALBERT-style language model.
+    \end{itemize}
+    \vspace{7pt}
+
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \large\textbf{Blog} & \text{2020—Present}\\
+        \text{Topics in machine learning, Rust, and computer science} & \href{https://bkkaggle.github.io/blog}{https://bkkaggle.github.io/blog}
+        \vspace{3pt}
+    \end{tabular*}
+    \begin{itemize}[topsep=0pt]\itemsep0em
+        \item Wrote series of long and short form blog posts on several topics in machine learning and computer science.
+        \item Published blog posts on the official PyTorch and Weights\&Biases blogs (\url{https://bit.ly/2FFCzL9}, \url{https://bit.ly/31Q06AS})        
+    \end{itemize}
+    \vspace{7pt}
+    
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \large\textbf{Machine learning competitions} & \text{Jan 2018—July 2019}\\
+        \text{Kaggle Expert} & \text{Highest competition rank: 798/140,000+}
+        \vspace{3pt}
+    \end{tabular*}
+    \begin{itemize}[topsep=0pt]\itemsep0em
+        \item \textbf{Silver Medal:} (41/3611) Google Analytics Customer Revenue Prediction Competition.
+        \item \textbf{Bronze Medal:} (54/648) CERN TrackML Particle Tracking Challenge
+        \item \textbf{Bronze Medal:} (173/3229) TGS Salt Identification Challenge
+        \item \textbf{Bronze Medal:} (287/3634) 2018 Data Science Bowl
+        \item \textbf{Bronze Medal:} (314/3165) Jigsaw Unintended Bias in Toxicity Classification         
+    \end{itemize}
+    \vspace{7pt}
+
+\section{Education}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \large\textbf{University of Waterloo} & \text{2020-2025 (Expected)}\\
+        \text{Bachelor of Software Engineering (BSE) Candidate} & \text{}\\
+        \large\textbf{Coursera} & \text{Nov 2017—Feb 2018}\\
+        \text{Deep Learning Specialization} & \href{https://coursera.org/verify/specialization/8YRK7HDMW5XZ}{coursera.org/verify/specialization/8YRK7HDMW5XZ}\\
+    \end{tabular*}
+
+\end{document}
