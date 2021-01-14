@@ -7,8 +7,12 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
 
 \usepackage[sfdefault, light]{FiraSans}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
 
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
@@ -23,13 +27,14 @@
 \setlength{\tabcolsep}{0in}
 
 \titleformat{\section}{
-  \vspace{-15pt}\scshape\raggedright\large
+  \vspace{-20pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 \renewcommand\labelitemi{\small$\bullet$}
+
 \newcommand{\heading}[3]{
     \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-        \textbf{#1} — #2 & #3
+    \textbf{#1} #2 & #3
     \end{tabular*}
     \vspace{-1em}
 }
@@ -38,82 +43,82 @@
     \begin{itemize}[topsep=0pt,leftmargin=1em]\itemsep0em
         #1
     \end{itemize}
+    \vspace{10pt}
 }
 
-\input{glyphtounicode}
-\pdfgentounicode=1
+\newcommand{\ExternalLink}{%
+    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1) 
+                --++ (-0, 1.2) 
+                --++ (0.6, 0) 
+                --++ (0, -0.6) 
+                --++ (0.6, 0) 
+                --++ (0, -1);
+            \path[draw, 
+                line width = 1,
+                rounded corners=0.5] 
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 1] (0.5, 0.5) 
+            -- (1, 1);
+        \path[draw, line width = 1] (0.6, 1) 
+            -- (1, 1) -- (1, 0.6);
+    }
+}
 
 \begin{document}
 
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{\href{https://bkkaggle.github.io/blog}{\LARGE Bilal Khan}} & \href{mailto:bilal.khan1@uwaterloo.ca}{bilal.khan1@uwaterloo.ca}\\
+    \textbf{\href{https://bkkaggle.github.io/blog}{\Huge Bilal Khan}} & \href{mailto:bilal.khan1@uwaterloo.ca}{bilal.khan1@uwaterloo.ca}\\
     \href{https://bkkaggle.github.io/blog}{bkkaggle.github.io/blog} & \href{https://github.com/bkkaggle}{github.com/bkkaggle}\\
+    & \href{https://www.linkedin.com/in/bilal-khan-9294451ab/}{linkedin.com/in/bilal-khan-9294451ab}
 \end{tabular*}
 
-\vspace{10pt}
-
-\section{About}
+\section{Skills}
 \items{
-    \item \textbf{Interests:} Full-stack and mobile development, NLP, Generative modeling, Systems programming
-    \item \textbf{Languages:} Python, Javascript, Rust, C/C++, SQL, Swift
-    \item \textbf{Libraries and Frameworks:} ReactJS/React Native, Node.js/Express.js, PyTorch, Tensorflow, JAX, GCP
+    \item \textbf{Languages:} Python, Javascript, Rust, C, C++, SQL, Swift
+    \item \textbf{Technologies:} React, React Native, Node.js, Express.js, PyTorch, TensorFlow, JAX, GCP
 }
 
-\vspace{10pt}
-
 \section{Experience}
-    \heading{Manageering Inc}{Full-stack and mobile developer}{Sep 2019—May 2020}
+    \heading{Manageering Inc}{— Full-stack and mobile developer}{Sep 2019—May 2020}
     \items{
-        \item Worked on developing an app to help students preparing for the SAT by creating personalized plans based on student results on diagnostic tests.
-        \item Built with React Native, Express.js, MySQL, and the Google Cloud Platform.
+        \item Developed a SAT prep app using \textbf{React Native}, \textbf{Express.js}, and \textbf{MySQL} that personalizes content based on student results to diagnostic tests.
+        \item Created a 3-step workflow in the app to learn, practice, and review new content while analyzing student results to find out which topics they need more practice on.
     }
-
-\vspace{10pt}
 
 \section{Projects}
 
-    \heading{\href{https://github.com/bkkaggle/jax-gans}{Replicating machine learning papers}}{Image-to-image translation GANs}{July—Dec 2020}
+    \heading{\href{https://github.com/bkkaggle/lm-training-research-project}{NLP research Project \ExternalLink}}{}{March—May 2020}
     \items{
-        \item Replicating the ACL-GAN paper in JAX and the Pix2Pix and Pix2PixHD papers in PyTorch and Tensorflow.
+        \item Trained OpenAI's \textbf{124M parameter} GPT-2 language model to generate convincing human-like text.
+        \item Used the Google Cloud Platform with \textbf{PyTorch} and \textbf{TensorFlow} to scale the model to a \textbf{128-core} TPU Pod. 
+        \item Developed and trained a new, more efficient ALBERT-style language model that uses \textbf{4x} less memory and trains \textbf{2x} faster than GPT-2.
     }
 
-    \vspace{5pt}
-
-    \heading{\href{https://github.com/bkkaggle/L2}{Machine learning library}}{Written in the Rust programming language}{May—June 2020}
+    \heading{\href{https://github.com/bkkaggle/L2}{Machine learning library \ExternalLink}}{}{May—June 2020}
     \items{
-        \item Supports numpy-style multidimensional arrays and array operations, fast BLAS-accelerated matrix multiplication, and an efficient graph-based automatic differentiation engine.
-    }
-    
-    \vspace{5pt}
-
-    \heading{\href{https://github.com/bkkaggle/lm-training-research-project}{NLP research Project}}{Replicating GPT-2}{March—May 2020}
-    \items{
-        \item Pretrained OpenAI's 124M parameter GPT-2 language model to generate convincing human-like text.
-        \item Used the Google Cloud Platform with PyTorch and Tensorflow to scale the model to a 128-core TPU Pod. 
-        \item Developed and pretrained a new, more efficient ALBERT-style language model that uses 4x less memory and trains 2x faster than GPT-2 with only a 10 ppl drop in performance.
+        \item Wrote a machine learning library in Rust that supports numpy-style multidimensional arrays and array operations, \textbf{fast BLAS-accelerated matrix multiplication}, and an efficient graph-based automatic differentiation engine.
     }
 
-    \vspace{5pt}
-
-    \heading{\href{https://github.com/bkkaggle/machine-learning-flight-rules}{Machine learning flight rules}}{A guide of useful tips and tricks for machine learning}{Sep 2019}
-
-    \vspace{5pt}
-
-    \heading{\href{https://github.com/bkkaggle/pytorch_zoo}{PyTorch Zoo}}{PyTorch utility library}{June 2019}
+    \heading{\href{https://github.com/bkkaggle/jax-gans}{Replicating machine learning papers \ExternalLink}}{}{2019—2020}
     \items{
-        \item Created a Python-based library with a collection of useful modules and utilities for working with PyTorch with 80+ stars on Github.
+        \item Replicated several image-to-image translation papers (ACL-GAN, Pix2Pix, Pix2PixHD) in \textbf{PyTorch}, \textbf{TensorFlow}, and \textbf{JAX}.
+        \item Implemented several machine learning papers in the field (WAP, Im2Latex) to transcribe handwritten math equations into LaTeX.
     }
 
-    \vspace{5pt}
+    % \heading{\href{https://github.com/bkkaggle/machine-learning-flight-rules}{Machine learning flight rules}}{}{Sep 2019}
+    % \items{
+    %     \item A guide of useful tips and tricks for machine learning
+    % }
 
-    \heading{\href{https://github.com/bkkaggle/math-recognition}{Computer vision research project}}{Handwritten mathematical expression recognition}{Feb—May 2019}
+    \heading{\href{https://github.com/bkkaggle/pytorch_zoo}{PyTorch Zoo \ExternalLink}}{}{June 2019}
     \items{
-        \item Worked on implementing several machine learning papers in the field (WAP, Im2Latex) to transcribe handwritten math equations into LaTeX.
+        \item Created an open-source Python library with \textbf{80+ stars} on Github with a collection of useful reference PyTorch implementations of commonly used machine learning modules and utilities.
     }
 
-    \vspace{5pt}
-
-    \heading{\href{https://www.kaggle.com/bkkaggle}{Machine learning competitions}}{Highest Kaggle rank: 798/150,000+}{Jan 2018—July 2019}
+    \heading{\href{https://www.kaggle.com/bkkaggle}{Machine learning competitions \ExternalLink}}{— Highest Kaggle rank: \textbf{798/150,000+}}{Jan 2018—July 2019}
     \items{
         \item \textit{Silver Medal:} (41/3611) Google Analytics Customer Revenue Prediction Competition
         \item \textit{Bronze Medal:} (54/648) CERN TrackML Particle Tracking Challenge
@@ -122,11 +127,9 @@
         \item \textit{Bronze Medal:} (314/3165) Jigsaw Unintended Bias in Toxicity Classification
     }
 
-\vspace{10pt}
-
 \section{Education}
-    \heading{University of Waterloo}{Bachelor of Software Engineering (BSE) Candidate}{2020—2025 (Expected)}
+    \heading{University of Waterloo}{Bachelor of Software Engineering (BSE) Candidate}{2020—2025}
     \vspace{7pt}
-    \heading{Coursera}{\href{https://coursera.org/share/f01a288c4d93810dbfe43cba754c64c3}{Deep learning specialization}}{Nov 2017—Feb 2018}
+    \heading{Coursera}{\href{https://coursera.org/share/f01a288c4d93810dbfe43cba754c64c3}{Deep learning specialization \ExternalLink}}{Nov 2017—Feb 2018}
 
 \end{document}
