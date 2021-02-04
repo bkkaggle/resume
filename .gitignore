@@ -20,3 +20,4 @@ package-lock.json
 *.fls
 *.log
 *.synctex.gz
+*_temp.tex
